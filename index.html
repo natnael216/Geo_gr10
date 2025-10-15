@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grade 10 Geography Mini App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Telegram Dark Style */
+        body {
+            background-color: #1e1e2d;
+            /* Telegram-style dark */
+            color: #fff;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        ::selection {
+            background: none;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #55acee;
+            /* Highlight for title */
+        }
+
+        p {
+            white-space: pre-wrap;
+            line-height: 1.6;
+            margin-top: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        #content-wrapper {
+            max-width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        @media screen {
+            body:after {
+                content: '';
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                pointer-events: none;
+                background: rgba(0, 0, 0, 0);
+                z-index: 9999;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="content-wrapper">
+        <h1 id="title">Initializing...</h1>
+        <p id="content">Waiting for Telegram Web App data...</p>
+    </div>
+
+    <!-- Telegram Web App SDK -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <script>
+        // Geography lesson topics for each deep link
+        const topics = {
+            "ab1gggggggggguukjnnnfhududhdhfhfhfhdhdhdteyeurtwjfitkgkgjgoyoyouljkhdncncmvmvhdfafarqrqrqwtweerdffhfjhfbdfbcbfbcbfbdbwfwfqeadzcsvdbdvsfafzcggggggab1gggggggggguukjnnnfhududhdhfhab1gggggggggguukjnnnfhududhdhfhfhfhdhdhdteyeurtwjfitkgkgjgoyoyouljkhdncncmvmvhdfafarqrqrqwtweerdffhfjhfbdfbcbfbcbfbdbwfwfqeadzcsvdbdvsfafzcggggggab1gggggggggguukjnnnfhududhdhfhfhfhdhdhdteyeurtwjfitkgkgjgoyoyouljkhdncncmvmvhdfafarqrqrqwtweerdffhfjhfbdfbcbfbcbfbdbwfwfqeadzcsvdbdvsfafzcgggggghhhhhjjjjjjjjjjjlllllllllllllllpppppppppppppppppppppppppppppppijihjfdhisccscncbvshiwdjxxsiajajxjxjhshsuqjsccghasdertrggfxvbnmmooplhteqazvavabxvbcgcssetxdfjfhdehejqfsvhsjrykfjsvbykfbfdfddssawwwedxcvafsvxbcncbncvmgmhmkhykpiipputuhdhsvshdhdhdbxvdbdbNewtonghggghghghghgh": {
+                title: "UNIT ONE",
+                content: `GEOLOGICAL HISTORY AND TOPOGRAPHY OF ETHIOPIA
+1.1 OVERVIEW OF THE WORLD’S MAJOR LANDFORMS (የዓለም ዋና ዋና የመሬት አቀማመጦች አጠቃላይ እይታ) 🌍
+Landforms are physical features on the Earth’s surface that form terrain of an area. 🏞️
+የመሬት አቀማመጥ(Landforms) የአንድን አካባቢ የመሬት ገጽታ(Earth’s surface) የሚፈጥሩ በምድር ላይ ያሉ features ናቸው። 🏞️
+Examples include mountains, hills, valleys, plateaus, rivers, and deserts. ⛰️
+ለምሳሌ ተራሮች፣ ኮረብታዎች፣ ሸለቆዎች፣ ደጋማ ቦታዎች፣ ወንዞች እና በረሃዎች....። ⛰️
+So, in easy words: Landforms are the shapes of the land you can see around you. 👀
+ስለዚህ፣ በቀላል አገላለጽ፡- የመሬት አቀማመጦች በዙሪያችን የምናያቸው የመሬት ቅርጾች ናቸው። 👀
+For example:
+A tall, rocky area is a mountain. 🏔️
+ረጃጅም፣ ዐለታማ ተራራ። 🏔️
+A low, flat area between hills is a valley. 🌲
+በኮረብታዎች መካከል ያለ ዝቅተኛ፣ ስምጥ ሸለቆዎች። 🌲
+Mountains, plateaus, and plains are the three major types of landforms. ⛰️
+1)ተራሮች፣ 
+2)ደጋማ ቦታዎች (plateaus) እና 
+3)ሜዳዎች (plains) ሦስቱ ዋና ዋና የመሬት አቀማመጦች ዓይነቶች ናቸው። ⛰️
+Minor landforms include hills, gorges, valleys, and basins. 🌄
+Minor landforms ደግሞ ኮረብታዎች፣ ሸለቆዎች (gorges)፣ የወንዝ ዳርቻዎች (valleys) እና የውኃ ተፋሰሶች (basins) ያካትታሉ። 🌄
+Tectonic plate movement and volcanic activities (internal processes) in the Earth’s interior can create landforms by pushing up mountains and hills. 🌋
+በምድር ውስጠኛ ክፍል ውስጥ በሚከሰቱ የTectonic plate movement እና የእሳተ ገሞራ እንቅስቃሴዎች (ውስጣዊ ሂደቶች) ተራሮችንና ኮረብታዎችን ወደ ላይ በመግፋት landformን መፍጠር ይችላሉ። 🌋
+Erosion by water and wind (external processes) can erode land and create minor landforms like gullies, river valleys ,and gorges. 💧🌬️
+በውሃ እና በንፋስ የሚፈጠር መሸርሸር (ውጫዊ ሂደቶች)
+መሬትን በመሸርሸር እንደ gullies፣ የወንዝ ሸለቆዎች እና ጥልቅ ገደሎች ያሉ ጥቃቅን የመሬት አቀማመጦችን መፍጠር ይችላሉ። 💧🌬️
+Both processes happen over a long period, sometimes millions of years. ⏳
+ሁለቱም ሂደቶች ለረጅም ጊዜ፣ አንዳንዴም በሚሊዮኖች የሚቆጠሩ ዓመታትን ሊወስዱ ይችላሉ። ⏳
+For example, it took a very long period to cut the deep Abbay Gorge between the towns of Goha Tsiyon in North Shewa, Oromia, and Dejen in East Gojam, Amhara National Regional State. 🇪🇹
+ለምሳሌ፣ በኦሮሚያ ክልል ሰሜን ሸዋ ውስጥ በሚገኘው ጎሃ ጽዮን ከተማ እና በአማራ ክልል በምስራቅ ጎጃም ውስጥ በሚገኘው ደጀን ከተማ መካከል ያለውን ጥልቅ የአባይ ሸለቆ (Abbay Gorge) ለመፈጠር እጅግ በጣም ረጅም ጊዜ ወስዷል። 
+The Abbay Gorge thus cuts down about 1000 m deep between the two towns mentioned above. 📏
+ስለሆነም የአባይ ሸለቆ በሁለቱ ከላይ በተጠቀሱት ከተሞች መካከል ወደ 1000 ሜትር ያህል ጥልቀት አለው። 📏
+The major landforms (mountains, plateaus and plains) are widely distributed on the earth’s surface. 🗺️
+ዋና ዋናዎቹ የመሬት አቀማመጦች (ተራሮች፣ ደጋማ ቦታዎችና ሜዳዎች) በምድር ገጽ ላይ በሰፊው ተሰራጭው ይገኛሉ። 🗺️
+The surface of the Earth is covered by land and water. 🌐
+የምድር ገጽ(surface of the Earth) በመሬት እና በውሃ ተሸፍኗል። 🌐
+The landforms make up continents and the water forms oceans. 🌊
+የመሬት አቀማመጥ(Landforms) አህጉራትን የሚፈጥሩ ሲሆን፣ ውሃው ደግሞ ውቅያኖሶችን ይፈጥራል። 🌊
+Continents are the largest landmasses in the world. 🌏
+አህጉራት በዓለም ላይ ያሉ ትልቁን የመሬት ክፍል የሚሸፍን ነው። 🌏
+The Earth is divided into seven continents, from largest to smallest area; Asia, Africa, North America, South America, Antarctica, Europe, and Oceania (Australia). 🔢
+ምድር  በሰባት አህጉራት የተከፋፈለ ነውነው፤ እነርሱም ከትልቅ እስከ ትንሽ በቅድመ ተከተል፡- እስያ፣ አፍሪካ፣ ሰሜን አሜሪካ፣ ደቡብ አሜሪካ፣ አንታርክቲካ፣ አውሮፓ እና ኦሺኒያ (አውስትራሊያ) ናቸው። 🔢
+Oceans are large areas of salt water between the continents. 🌊
+ውቅያኖሶች (Oceans) በአህጉራት መካከል ያሉ ትላልቅ የጨው ውኃ ቦታ(areas) ናቸው። 🌊
+Although all the oceans are connected, making them one big ocean, they are divided into five smaller oceans that are separated by their location and the way the water in them moves. 🌐
+ሁሉም ውቅያኖሶች የተገናኙ ቢሆኑም (አንድ ትልቅ ውቅያኖስ ቢመስሉም)፣ በአካባቢያቸው እና ውሃው በሚንቀሳቀስበት መንገድ ተለይተው ወደ አምስት ትናንሽ ውቅያኖሶች ይከፈላሉ። 🌐
+These oceans are the Arctic Ocean, the Atlantic Ocean, the Indian Ocean, the Pacific Ocean, and the Southern Ocean. 🔢
+እነዚህ ውቅያኖሶች አርክቲክ ውቅያኖስ፣ አትላንቲክ ውቅያኖስ፣ ህንድ ውቅያኖስ፣ ፓሲፊክ ውቅያኖስ እና ደቡብ ውቅያኖስ ናቸው። 🔢
+The oceans together cover huge areas of the Earth. 🌏
+ውቅያኖሶች በአጠቃላይ ትልቅ የምድር ክፍልን ይሸፍናሉ። 🌏
+They cover seventy one percent of the Earth. 📏
+የምድርን ሰባ አንድ በመቶ (71%) ይሸፍናሉ። 📏
+The Pacific Ocean is both the largest and the deepest ocean, which covers one-third of the Earth’s surface. 
+ፓሲፊክ ውቅያኖስ ትልቁ እና ጥልቁ ውቅያኖስ ሲሆን፣ አንድ ሦስተኛውን (1/3) የምድር ገጽ ይሸፍናል።
+Oceans are important factors for creating or forming coastal land features such as islands, peninsulas, isthmuses. 🏝️
+ውቅያኖሶች እንደ ደሴቶች (islands)፣ peninsulas ፣ isthmuses ያሉ የባሕር ዳርቻ የመሬት features ለመፍጠር አስፈላጊ ነገሮች ናቸው። 🏝️
+An island is a piece of ground that is completely surrounded by water. 🏝️
+ደሴት በውሃ ሙሉ በሙሉ የተከበበ የመሬት ክፍል ነው። 🏝️
+Islands can be big or small in any part of the world. 🗺️
+ደሴቶች በዓለም ላይ በማንኛውም ቦታ ትልቅ ወይም ትንሽ ሊሆኑ ይችላሉ። 🗺️
+The largest island in the world is Greenland. 🧊
+በዓለም ላይ ትልቁ ደሴት ግሪንላንድ ነው። 🧊
+Australia is bigger than Greenland but it is considered as a continent instead of an island.
+አውስትራሊያ ከግሪንላንድ የምትበልጥ ቢሆንም፣ ከደሴት ይልቅ አህጉር ተብላ ትታሰባለች።
+Two more coastal land features that involve a little land and a lot of water are peninsulas, and isthmus. 🏝️
+ትንሽ መሬትና ብዙ ውኃ ያላቸው ሌሎች ሁለት የባሕር ዳርቻ የመሬት ገጽታዎች ልሳነ ምድር (peninsulas) እና ጠባብ የመሬት ክልል (isthmus) ናቸው። 🏝️
+A peninsula is a piece of land that has water on three sides but it is connected on the fourth side to the mainland. 🏞️
+peninsula በሦስት ጎኑ በውኃ የተገናኘ ነግር ግን በአራተኛው ጎኑ ከመሬት ጋር የተገናኘ የመሬት ክፍል ነው። 🏞️
+The two well-known peninsulas are Italy and Florida.
+በደንብ የሚታወቁ ሁለቱ  peninsulas ጣሊያን እና ፍሎሪዳ ናቸው።
+An isthmus is a narrow strip of land with water on both sides connecting two larger pieces of land. 🔗
+isthmus በሁለት ጎኑ ውኃ ያለው እና ሁለት ትላልቅ የመሬት ክፍሎችን የሚያገናኝ ጠባብ የመሬት ክፍል ነው። 🔗
+A well-known example is the Isthmus of Panama that connects North America to South America. 🇵🇦
+ሰሜን አሜሪካን ከደቡብ አሜሪካ ጋር የሚያገናኘው የፓናማ ጠባብ የመሬት ክልል (Isthmus of Panama) በደንብ የሚታወቅ የsthmus ምሳሌ ነው። 
+The major landforms of the world create unique areas where people around the world want to know, explore, and visit. 🗺️
+የዓለም ዋና ዋና የመሬት አቀማመጥ(Landforms) በዓለም ዙሪያ ያሉ ሰዎች 
+ሊያውቁት፣
+ሊያስሱት እና
+ሊጎበኙት የሚፈልጉትን ልዩ ልዩ ቦታዎችን ይፈጥራሉ። 🗺️
+These landforms generally divide continents and countries into different physiographic divisions. 🏞️
+እነዚህ የመሬት አቀማመጦች በአጠቃላይ አህጉራትን እና አገሮችን ወደ ተለያዩ የፊዚዮግራፊ ክፍሎች (physiographic divisions) ይከፍላሉ። 🏞️
+`
+            },
+            "ab2gggggggggguukjnnnfhududhdhfhfhfhdhdhdteyeurtwjfitkgkgjgoyoyouljkhdncncmvmvhdfafarqrqrqwtweerdffhfjhfbdfbcbfbcbfbdbwfwfqeadzcsvdbdvsfafzcggggggab1gggggggggguukjnnnfhududhdhfhab1gggggggggguukjnnnfhududhdhfhfhfhdhdhdteyeurtwjfitkgkgjgoyoyouljkhdncncmvmvhdfafarqrqrqwtweerdffhfjhfbdfbcbfbcbfbdbwfwfqeadzcsvdbdvsfafzcggggggab1gggggggggguukjnnnfhududhdhfhfhfhdhdhdteyeurtwjfitkgkgjgoyoyouljkhdncncmvmvhdfafarqrqrqwtweerdffhfjhfbdfbcbfbcbfbdbwfwfqeadzcsvdbdvsfafzcgggggghhhhhjjjjjjjjjjjlllllllllllllllpppppppppppppppppppppppppppppppijihjfdhisccscncbvshiwdjxxsiajajxjxjhshsuqjsccghasdertrggfxvbnmmooplhteqazvavabxvbcgcssetxdfjfhdehejqfsvhsjrykfjsvbykfbfdfddssawwwedxcvafsvxbcncbncvmgmhmkhykpiipputuhdhsvshdhdhdbxvdbdbNewtonghggghghghghgh": {
+                title: "UNIT ONE",
+                content: `GEOLOGICAL HISTORY AND TOPOGRAPHY OF ETHIOPIA?
+I. MOUNTAIN (ተራራ) ⛰️
+Mountains are the largest elevated and most recognizable landforms on the Earth’s surface. 🏞️
+ተራሮች (Mountains) በምድር ገጽ ላይ ከሚገኙት ትልቁ፣ ከፍ ያለው እና በጣም የሚታወቁ የመሬት አቀማመጦች ናቸው። 🏞️
+They have steep sides, and high peaks, that stand out from the surrounding land. 🏔️
+ቁልቁለት ያላቸው ጎኖች፣ እና በአካባቢው ካለው መሬት የጎሉ ከፍተኛ ጫፎች አሏቸው። 🏔️
+Around mountains, we may find smaller, less steep landforms called hills. 🌳
+በተራሮች ዙሪያ፣ ኮረብታዎች (hills) የሚባሉ ትናንሽ እና ብዙም ቁልቁለት የሌላቸው የመሬት አቀማመጦችን ልናገኝ እንችላለን። 🌳
+Mountains are usually formed when rock layers are pushed together from opposite sides. 🧱
+ተራሮች የሚፈጠሩት ብዙውን ጊዜ የዐለት ንጣፎች ከተቃራኒ አቅጣጫዎች በመገፋፋት ነው። 🧱
+Thus, the pressure exerted from the movement forces the land in the middle to rise. ⬆️
+ስለዚህ፣ ከእንቅስቃሴው የሚፈጠረው ግፊት በመካከል ያለውን መሬት ወደ ላይ እንዲወጣ ያስገድዳል። ⬆️
+The low areas between mountains are called valleys. 🌲
+በተራሮች መካከል ያሉት ዝቅተኛ ቦታዎች ሸለቆዎች (valleys) ይባላሉ። 🌲
+Mountains may also be formed by volcanic activity when lava and other materials build up on the surface, but mountains are not the only landforms that can be made by volcanoes. 🌋
+ተራሮች እሳተ ገሞራ በሚፈነዳበት ጊዜ ላቫ እና ሌሎች ቁሳቁሶች በገጹ ላይ በመጠራቀም ሊፈጠሩ ይችላሉ፣ ነገር ግን በእሳተ ገሞራ ብቻ ሊፈጠሩ የሚችሉት ብቸኛ የመሬት አቀማመጦች ተራሮች አይደሉም። 🌋
+The highest landform on Earth is Mt. Everest. 🏔️🔝
+በምድር ላይ እጅግ በጣም ከፍ ያለ የመሬት አቀማመጥ ኤቨረስት ተራራ (Mt. Everest) ነው። 🏔️🔝
+It is a peak in the Himalaya’s Mountain range. 📍
+እሱ የሂማላያ ተራራ ሰንሰለት (Himalaya’s Mountain range) ጫፍ ነው። 📍
+It is located between Nepal and Tibet. 🇳🇵
+የሚገኘውም በኔፓል እና በቲቤት መካከል ነው። 🇳🇵
+It measures 8,849 meters above sea level. 📈
+ከባህር ጠለል በላይ 8,849 ሜትር ይለካል። 📈
+It is part of the Himalaya Mountain range that runs across several countries in South and Southeast Asia such as India, Pakistan, Nepal, Bhutan, China, and Afghanistan. 🌏
+በደቡብ እና በደቡብ ምስራቅ እስያ ውስጥ እንደ ህንድ፣ ፓኪስታን፣ ኔፓል፣ ቡታን፣ ቻይና እና አፍጋኒስታን ባሉ በርካታ አገሮች ላይ የተዘረጋው የሂማላያ ተራራ ሰንሰለት አካል ነው። 🌏
+The mountain range extends 320 to 400 kms in width and 1500 kms in length. 📏
+የተራራው ሰንሰለት ከ320 እስከ 400 ኪ.ሜ ስፋት እና 1500 ኪ.ሜ ርዝመት አለው። 📏
+The Himalayas were formed about 40 to 50 million years ago when the Indian tectonic plates collided with the Eurasian plate. 💥
+ሂማላያዎች የተፈጠሩት ከ40 እስከ 50 ሚሊዮን ዓመታት በፊት የህንድ ቴክቶኒክ ሰሌዳዎች ከዩራሺያን ሰሌዳ ጋር ሲጋጩ ነው። 💥
+Indian tectonic plate and the Eurasian plates are continental crust and have the same density. 🪨
+የህንድ ቴክቶኒክ ሰሌዳ እና የዩራሺያን ሰሌዳዎች አህጉራዊ ቅርፊት (continental crust) ናቸው እና ተመሳሳይ ውፍረት/ጥግግት (density) አላቸው። 🪨
+Therefore, when the two plates collide, pushing upwards at their edges formed the Himalayan Mountains. ⬆️⛰️
+ስለዚህ፣ ሁለቱ ሰሌዳዎች ሲጋጩ፣ በጫፎቻቸው ላይ ወደ ላይ መገፋፋት የሂማላያ ተራሮችን ፈጠረ። ⬆️⛰️
+Landforms can also exist under oceans in the form of mountain ranges and basins. 
+የመሬት አቀማመጦች በውቅያኖሶች ስርም በተራራ ሰንሰለቶች እና በውኃ ተፋሰሶች መልክ ሊኖሩ ይችላሉ። 
+The Mariana Trench, the deepest landform on Earth, is in the South Pacific Ocean. ⬇️
+በምድር ላይ እጅግ በጣም ጥልቅ የሆነው የመሬት አቀማመጥ የሆነው የማሪና ትሬንች (Mariana Trench) የሚገኘው በደቡብ ፓሲፊክ ውቅያኖስ ነው። ⬇️
+`
+            }
+        };
+
+        // Function to update page content
+        function updateContent(topicKey) {
+            const titleElement = document.getElementById("title");
+            const contentElement = document.getElementById("content");
+            const topic = topics[topicKey];
+
+            if (topic) {
+                titleElement.textContent = topic.title;
+                contentElement.textContent = topic.content;
+            } else {
+                titleElement.textContent = "Welcome to Grade 9 Geography tutorials – stay with us!";
+                contentElement.textContent = "";
+            }
+        }
+
+        // Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            let topicKey = null;
+
+            if (window.Telegram && window.Telegram.WebApp) {
+                window.Telegram.WebApp.ready();
+                if (Telegram.WebApp.initDataUnsafe?.start_param) {
+                    topicKey = Telegram.WebApp.initDataUnsafe.start_param;
+                }
+
+                Telegram.WebApp.setBackgroundColor('#1e1e2d');
+                Telegram.WebApp.setHeaderColor('#1e1e2d');
+            }
+
+            // Fallback for testing in browser
+            if (!topicKey) {
+                const urlParams = new URLSearchParams(window.location.search);
+                topicKey = urlParams.get("topic");
+            }
+
+            updateContent(topicKey);
+        });
+    </script>
+</body>
+</html>
+
+
